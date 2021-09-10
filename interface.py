@@ -4,7 +4,6 @@ from tkinter import ttk
 from tkinter import messagebox
 from dataBaseConections import getAllPlaces, updateAPI, getCoordinates
 
-
 app = tk.Tk()
 app.title("Rutas La Asunción")
 

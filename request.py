@@ -2,7 +2,6 @@ import requests
 import tkinter as tk
 from dataBaseConections import getAPIKey
 
-
 def extractTime(st):
     param = "duration"
     result = st.find(param)
