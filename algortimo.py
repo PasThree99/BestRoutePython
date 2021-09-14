@@ -30,11 +30,23 @@ def ruta_a_seguir(lugares):
             tiempoMinimo = tiempoActual
             ordenFinal.append(orden)
     
-    stf = "MADER CENTER -> "
+    ordenmin = ordenFinal[-1]
+    ca = getCoordinates( ordenmin[-1])
+    cf = getCoordinates( origin )
+
+    r = makeRequest(ca,cf)
+
+    tiempoMinimo += r    
+
+        
+    
+    stf = origin +" -> "
     for lu in ordenFinal[-1]:
         stf = stf + dic[lu]
-        if(lu != ordenFinal[-1][-1]):
-            stf += " -> "
+        
+        stf += " -> "
+    
+    stf +=  origin
 
     return (stf,tiempoMinimo) 
             

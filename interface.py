@@ -11,8 +11,7 @@ app.title("Rutas La Asunción")
 places = getAllPlaces()
 combs = [ttk.Combobox(app, values = places) for i in range(3)]
 
-msg = tk.StringVar()
-msg.set("Inicio")
+
 
 def add_combox():
     combs.append(ttk.Combobox(app, values = places))
@@ -26,13 +25,11 @@ def calcular ():
             l.append(a)
 
     if(len(l) <= 1):
-        msg.set("\nERROR: Solo hay " + str(len(l)) + " ubicaciones registadas")
-        #mensajes.config(text = "\nERROR: Solo hay " + str(len(l)) + " ubicaciones registadas")
+        mensajes.config(text = "\nERROR: Solo hay " + str(len(l)) + " ubicaciones registadas")
         return
     else:
-        msg.set("\n Calculando")
+        mensajes.config(text = "\nCalculando ...")
         sleep(0.2)
-        #mensajes.config(text = "\nCalculando ...")
 
     lcc = {}
 
@@ -83,7 +80,7 @@ api = tk.Button(app, text = " Cambiar clave API ", command = changeAPI)
 api.grid(column = 30, row = 1000 )
 
 
-mensajes = tk.Label(app, textvariable = msg )
+mensajes = tk.Label(app, text = " "  )
 mensajes.grid(row = 500, column = 20)
 
 def on_closing():
