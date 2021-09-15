@@ -28,7 +28,9 @@ def calcular ():
         mensajes.config(text = "\nERROR: Solo hay " + str(len(l)) + " ubicaciones registadas")
         return
     else:
-        mensajes.config(text = "\nCalculando ...")
+        #mensajes.config(text = "\nCalculando ...")
+        mensajes['text'] = "\nCalculando..."
+        print("Si pasé")
         sleep(0.2)
 
     lcc = {}
